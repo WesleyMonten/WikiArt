@@ -1,0 +1,47 @@
+mat-toolbar {
+    background-color: #D3BAA6;
+}
+
+span {
+    flex: 1 1 auto;
+}
+
+mat-form-field {
+    margin-right: 5px;
+    color: white;
+    width: 300px;
+    height: 52px !important;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+a>img {
+    margin-top: 5px;
+}
+
+.menu {
+    color: #fff;
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+.zoek {
+    margin-right: 25px;
+    height: 47px;
+    background-color: #89818F;
+    color: #fff;
+    font-weight: bold;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #89818F;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #89818F;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-label { 
+    color: #89818F;
+}
