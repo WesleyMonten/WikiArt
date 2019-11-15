@@ -7,13 +7,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { RoutingModule } from './routing/routing.module';
 import { HomeComponent } from './dashboard/home/home.component';
+import { ToevoegenComponent } from './dashboard/toevoegen/toevoegen.component';
+import { ArtiestService } from './artiest/artiest.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    ToevoegenComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,9 @@ import { HomeComponent } from './dashboard/home/home.component';
     RoutingModule,
     SharedModule
   ],
-  providers: [],
+  providers: [
+    ArtiestService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="toevoegen">
+    <h2>Nieuwe artiest</h2>
+    <div class="row">
+        <div class="col-6">
+                <form [formGroup]="artiestForm" (ngSubmit)="onSubmitArtiest()">
+                        <div class="row">
+                            <div class="col-12">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Naam</mat-label>
+                                    <input matInput placeholder="Naam" type="text" name="Naam" formControlName="naam"/>
+                                </mat-form-field> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Nationaliteit</mat-label>
+                                    <input matInput placeholder="Nationaliteit" type="text" name="Nationaliteit" formControlName="nationaliteit"/>
+                                </mat-form-field> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Jaren</mat-label>
+                                    <input matInput placeholder="Jaren" type="text" name="Jaren" formControlName="jaren"/>
+                                </mat-form-field> 
+                            </div>
+                            <div class="col-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Aantal schilderijen</mat-label>
+                                    <input matInput placeholder="Aantal schilderijen" type="text" name="AantalSchilderijen" formControlName="aantalSchilderijen"/>
+                                </mat-form-field> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Foto Artiest</mat-label>
+                                    <input matInput placeholder="URL" type="text" name="Foto" formControlName="imageUrl" #Image (ngModelChange)="onChangeImage($event)"/>
+                                </mat-form-field> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Biografie</mat-label>
+                                    <textarea matInput name="Biografie" placeholder="Biografie" formControlName="biografie" cols="30" rows="6"></textarea>
+                                </mat-form-field> 
+                            </div>
+                        </div>
+                        <button mat-flat-button type="submit" [disabled]="!artiestForm.valid">Toevoegen</button>
+                 </form> 
+        </div>
+        <div class="col-6">
+            <img [src]='imageUrl' width="380px" height="100%">
+        </div>
+    </div>
+    </div>
+</div>

@@ -15,7 +15,7 @@ mat-form-field {
     font-weight: bold;
 }
 
-a>img {
+a>img, button {
     margin-top: 5px;
 }
 
@@ -28,6 +28,7 @@ a>img {
 
 .zoek {
     margin-right: 25px;
+    margin-bottom: 4px;
     height: 47px;
     background-color: #89818F;
     color: #fff;
