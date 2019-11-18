@@ -1,78 +1,19 @@
 <div class="container">
-  <div class="toevoegen">
-    <h2>Nieuwe artiest</h2>
-    <div class="row">
-      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-        <form [formGroup]="artiestForm" (ngSubmit)="onSubmitArtiest()" class="artiestform">
-          <div class="row">
-            <div class="col-12">
-              <mat-form-field appearance="outline">
-                <mat-label>Naam</mat-label>
-                <input matInput placeholder="Naam" type="text" name="Naam" formControlName="naam" />
-              </mat-form-field>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <mat-form-field appearance="outline">
-                <mat-label>Nationaliteit</mat-label>
-                <input matInput placeholder="Nationaliteit" type="text" name="Nationaliteit"
-                  formControlName="nationaliteit" />
-              </mat-form-field>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <mat-form-field appearance="outline">
-                <mat-label>Jaren</mat-label>
-                <input matInput placeholder="Jaren" type="text" name="Jaren" formControlName="jaren" />
-              </mat-form-field>
-            </div>
-            <div class="col-6">
-              <mat-form-field appearance="outline">
-                <mat-label>Aantal schilderijen</mat-label>
-                <input matInput placeholder="Aantal schilderijen" type="text" name="AantalSchilderijen"
-                  formControlName="aantalSchilderijen" />
-              </mat-form-field>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <mat-form-field appearance="outline">
-                <mat-label>Foto Artiest</mat-label>
-                <input matInput placeholder="URL" type="text" name="Foto" formControlName="imageUrl" #Image
-                  (ngModelChange)="onChangeImage($event)" />
-              </mat-form-field>
-            </div>
-          </div>
-          <form [formGroup]="genreForm" (ngSubmit)="onSubmitArtiest()" class="row">
-            <div formArrayName="Genres" *ngFor="let genref of genreForm.get('Genres').controls; let i=index"
-              class="col-4">
-              <mat-form-field appearance="outline" [formGroupName]="i">
-                <mat-label *ngIf="i===0">Genre</mat-label>
-                <mat-label *ngIf="i===1 || i===2">Optioneel Genre</mat-label>
-                <mat-select placeholder="Genre" formControlName="Genre">
-                  <mat-option value="0">-- Selecteer genre ---</mat-option>
-                  <mat-option *ngFor="let genre of genres" [value]="genre.id">{{ genre.naam }}</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </form>
-          <div class="row">
-            <div class="col-12">
-              <mat-form-field appearance="outline">
-                <mat-label>Biografie</mat-label>
-                <textarea matInput name="Biografie" placeholder="Biografie" formControlName="biografie" cols="30"
-                  rows="6"></textarea>
-              </mat-form-field>
-            </div>
-          </div>
-          <button mat-flat-button type="submit" [disabled]="!artiestForm.valid || !genreForm">Toevoegen</button>
-        </form>
-      </div>
-      <div class="col-xl-6 col-lg-6 col-md-10 col-sm-10">
-        <img [src]='imageUrl' height="100%">
-      </div>
+  <div class="row opties">
+    <div class="mat-elevation-z4 ripple-container col-5" matRipple [matRippleCentered]="centered"
+      [matRippleDisabled]="disabled" [matRippleUnbounded]="unbounded" [matRippleRadius]="radius"
+      [matRippleColor]="color" (click)="navigateArtiest()">
+      <img src="../../../assets/monet.jpg">
+      <span class="text"> Artiest
+      </span>
+    </div>
+    <div class="col-2"></div>
+    <div class="mat-elevation-z4 ripple-container col-5" matRipple [matRippleCentered]="centered"
+      [matRippleDisabled]="disabled" [matRippleUnbounded]="unbounded" [matRippleRadius]="radius"
+      [matRippleColor]="color" (click)="navigateGenre()">
+      <img src="../../../assets/roses.jpg">
+      <span class="text"> Genre
+      </span>
     </div>
   </div>
 </div>

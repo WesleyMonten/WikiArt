@@ -1,35 +1,45 @@
-h2 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position: relative;
-  top: 20px;
-}
-
-.artiestform {
-  position: relative;
-  top: 40px;
-}
-
-mat-form-field {
-  width: 100%;
-}
-
-button {
-  background-color: #89818F;
-  color: #fff;
-  margin-bottom: 50px;
-}
-
-.toevoegen {
-  position: relative !important;
-  top: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-img {
-  border-radius: 1%;
-  margin-bottom: 20px;
+.ripple-container {
+  cursor: pointer;
   text-align: center;
-  width: 380px;
+
+  width: 300px;
+  height: 300px;
+  line-height: 300px;
+
+  user-select: none;
+
+  border-radius: 1%;
+  padding: 0;
+  border: white 4px solid;
+
+}
+
+.opties {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%,50%);
+}
+
+
+.ripple-container img {
+  display: block;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+  filter: blur(4px);
+}
+
+
+.ripple-container:hover {
+  transition: all 300ms ease-in-out;
+  transform: scale(1.03);
+}
+
+.text {
+  position: absolute;
+  top: 1%;
+  bottom: 0;
+  left: 42%;
+  font-size: 25px;
+  color: #fff;
 }

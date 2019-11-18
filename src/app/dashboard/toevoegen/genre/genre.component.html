@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="toevoegen">
+        <h2>Nieuw genre</h2>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <form [formGroup]="genreForm" (ngSubmit)="onSubmitGenre()" class="genreform">
+                    <div class="row">
+                        <div class="col-12">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Naam</mat-label>
+                                <input matInput placeholder="Naam" type="text" name="Naam" formControlName="naam" />
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 mat-elevation-z8">
+                            <table mat-table [dataSource]=" dataSource" *ngIf="dataSource">
+                                <ng-container matColumnDef="Select">
+                                    <th mat-header-cell *matHeaderCellDef>
+                                        <mat-checkbox (change)="$event ? masterToggle() : null"
+                                            [checked]="selection.hasValue() && isAllSelected()"
+                                            [indeterminate]="selection.hasValue() && !isAllSelected()"
+                                            [aria-label]="checkboxLabel()">
+                                        </mat-checkbox>
+                                    </th>
+                                    <td mat-cell *matCellDef="let row">
+                                        <mat-checkbox (click)="$event.stopPropagation()"
+                                            (change)="$event ? selection.toggle(row) : null"
+                                            [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
+                                        </mat-checkbox>
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="Artiest">
+                                    <th mat-header-cell *matHeaderCellDef> Artiest </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.naam}} </td>
+                                </ng-container>
+
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                                    (click)="selection.toggle(row)">
+                                </tr>
+                            </table>
+                            <mat-paginator [length]="resultsLength" [pageSizeOptions]="[5, 10, 20]"
+                                showFirstLastButtons></mat-paginator>
+                        </div>
+                    </div>
+                    <button mat-flat-button type="submit" [disabled]="!genreForm">Toevoegen</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

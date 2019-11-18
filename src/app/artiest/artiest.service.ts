@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Artiest } from './models/artiest.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class ArtiestService {
 
   constructor(private http: HttpClient) { }
+
+  getArtiesten(): Observable<any> {
+    return this.http.get<Artiest[]>("http://localhost:8050/artiesten/artiesten");
+  }
 
   addArtiest(artiest: Artiest) {
     return this.http.post<Artiest>("http://localhost:8050/artiesten/artiest", JSON.stringify(artiest), {

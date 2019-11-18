@@ -10,6 +10,8 @@ import { HomeComponent } from './dashboard/home/home.component';
 import { ToevoegenComponent } from './dashboard/toevoegen/toevoegen.component';
 import { ArtiestService } from './artiest/artiest.service';
 import { GenreService } from './genre/genre.service';
+import { ArtiestToevoegenComponent } from './dashboard/toevoegen/artiest/artiest.component';
+import { GenreToevoegenComponent } from './dashboard/toevoegen/genre/genre.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { GenreService } from './genre/genre.service';
     AppComponent,
     NavComponent,
     HomeComponent,
-    ToevoegenComponent
+    ToevoegenComponent,
+    ArtiestToevoegenComponent,
+    GenreToevoegenComponent
   ],
   imports: [
     BrowserModule,

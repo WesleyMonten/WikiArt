@@ -18,4 +18,10 @@ export class GenreService {
       headers: new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8')
     });
   }
+
+  addGenre(genre: Genre) {
+    return this.http.post<Genre>("http://localhost:8050/genres/genre", JSON.stringify(genre), {
+      headers: new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8')
+    });
+  }
 }

@@ -1,0 +1,36 @@
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    top: 20px;
+  }
+  
+  .artiestform {
+    position: relative;
+    top: 40px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  button {
+    background-color: #89818F;
+    color: #fff;
+    margin-bottom: 50px;
+  }
+  
+  .toevoegen {
+    position: relative !important;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  img {
+    border-radius: 1%;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 380px;
+    height: 100%;
+  }
+  

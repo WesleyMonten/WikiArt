@@ -1,0 +1,31 @@
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    top: 20px;
+  }
+  
+  .genreform {
+    position: relative;
+    top: 40px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  button {
+    background-color: #89818F;
+    color: #fff;
+    margin-top: 20px;
+  }
+  
+  .toevoegen {
+    position: relative !important;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  table, mat-paginator {
+    width: 100%;
+}

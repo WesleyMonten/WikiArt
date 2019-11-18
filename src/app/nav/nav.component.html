@@ -1,13 +1,15 @@
 <mat-toolbar class="mat-elevation-z6">
     <a routerLink="" routerLinkActive="active">
-        <img src="../assets/wikiart_logo.png" width="180px"  mat-button-icon/>  
+        <img src="../assets/wikiart_logo.png" width="180px" mat-button-icon />
     </a>
-    <button mat-button class="menu" routerLink="/genres" routerLinkActive="active">Genres</button> 
-    <button mat-button class="menu" routerLink="/toevoegen" routerLinkActive="active">Toevoegen</button> 
+    <button mat-button class="menu" routerLink="/genres" routerLinkActive="active">Genres</button>
+    <button mat-button class="menu" routerLink="/toevoegen" routerLinkActive="active">Toevoegen</button>
     <span></span>
     <mat-form-field appearance="outline">
         <mat-label>Zoeken</mat-label>
         <input matInput placeholder="Zoek artiesten">
-      </mat-form-field>
-      <button mat-flat-button class="zoek"  routerLink="/zoek" routerLinkActive="active"><mat-icon>search</mat-icon></button> 
+    </mat-form-field>
+    <button mat-flat-button class="zoek" routerLink="/zoek" routerLinkActive="active">
+        <mat-icon>search</mat-icon>
+    </button>
 </mat-toolbar>
