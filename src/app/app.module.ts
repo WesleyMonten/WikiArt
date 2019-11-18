@@ -9,6 +9,7 @@ import { RoutingModule } from './routing/routing.module';
 import { HomeComponent } from './dashboard/home/home.component';
 import { ToevoegenComponent } from './dashboard/toevoegen/toevoegen.component';
 import { ArtiestService } from './artiest/artiest.service';
+import { GenreService } from './genre/genre.service';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ArtiestService } from './artiest/artiest.service';
     SharedModule
   ],
   providers: [
-    ArtiestService
+    ArtiestService,
+    GenreService
   ],
   bootstrap: [AppComponent]
 })
