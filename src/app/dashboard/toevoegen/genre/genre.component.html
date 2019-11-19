@@ -11,6 +11,8 @@
                                 <input matInput placeholder="Naam" type="text" name="Naam" formControlName="naam" />
                             </mat-form-field>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-12 mat-elevation-z8">
                             <table mat-table [dataSource]=" dataSource" *ngIf="dataSource">
                                 <ng-container matColumnDef="Select">
@@ -38,8 +40,8 @@
                                     (click)="selection.toggle(row)">
                                 </tr>
                             </table>
-                            <mat-paginator [length]="resultsLength" [pageSizeOptions]="[5, 10, 20]"
-                                showFirstLastButtons></mat-paginator>
+                            <mat-paginator [length]="resultsLength" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                                *ngIf="dataSource"></mat-paginator>
                         </div>
                     </div>
                     <button mat-flat-button type="submit" [disabled]="!genreForm">Toevoegen</button>
@@ -47,4 +49,3 @@
             </div>
         </div>
     </div>
-</div>

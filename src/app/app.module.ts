@@ -12,6 +12,8 @@ import { ArtiestService } from './artiest/artiest.service';
 import { GenreService } from './genre/genre.service';
 import { ArtiestToevoegenComponent } from './dashboard/toevoegen/artiest/artiest.component';
 import { GenreToevoegenComponent } from './dashboard/toevoegen/genre/genre.component';
+import { SchilderijService } from './schilderij/schilderij.service';
+import { SchilderijToevoegenComponent } from './dashboard/toevoegen/schilderij/schilderij.component';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { GenreToevoegenComponent } from './dashboard/toevoegen/genre/genre.compo
     HomeComponent,
     ToevoegenComponent,
     ArtiestToevoegenComponent,
-    GenreToevoegenComponent
+    GenreToevoegenComponent,
+    SchilderijToevoegenComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { GenreToevoegenComponent } from './dashboard/toevoegen/genre/genre.compo
   ],
   providers: [
     ArtiestService,
-    GenreService
+    GenreService,
+    SchilderijService
   ],
   bootstrap: [AppComponent]
 })

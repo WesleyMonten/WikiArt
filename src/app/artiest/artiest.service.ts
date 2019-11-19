@@ -9,11 +9,11 @@ export class ArtiestService {
   constructor(private http: HttpClient) { }
 
   getArtiesten(): Observable<any> {
-    return this.http.get<Artiest[]>("http://localhost:8050/artiesten/artiesten");
+    return this.http.get<Artiest[]>("http://localhost:8762/api/artiesten/artiesten");
   }
 
   addArtiest(artiest: Artiest) {
-    return this.http.post<Artiest>("http://localhost:8050/artiesten/artiest", JSON.stringify(artiest), {
+    return this.http.post<Artiest>("http://localhost:8762/api/artiesten/artiest", JSON.stringify(artiest), {
       headers: new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8')
     });
   }

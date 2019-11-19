@@ -23,6 +23,10 @@ export class ToevoegenComponent implements OnInit {
     this.router.navigate(['/genre-toevoegen'])
   }
 
+  navigateSchilderij() {
+    this.router.navigate(['/schilderij-toevoegen'])
+  }
+
   ngOnInit() { }
 
 }

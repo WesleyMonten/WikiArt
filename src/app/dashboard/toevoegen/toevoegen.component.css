@@ -6,6 +6,8 @@
   height: 300px;
   line-height: 300px;
 
+  margin: 25px;
+
   user-select: none;
 
   border-radius: 1%;
@@ -43,3 +45,7 @@
   font-size: 25px;
   color: #fff;
 }
+
+/* .container-fluid {
+  padding: 500px;
+} */
