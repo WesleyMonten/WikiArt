@@ -17,4 +17,8 @@ export class ArtiestService {
       headers: new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8')
     });
   }
+
+  filterOpGenre(genreId: string) {
+    return this.http.get<Artiest[]>("http://localhost:8762/api/artiesten/filter/" + genreId);
+  }
 }

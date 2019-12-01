@@ -6,11 +6,12 @@ import { ToevoegenComponent } from './toevoegen/toevoegen.component';
 import { ArtiestToevoegenComponent } from './toevoegen/artiest/artiest.component';
 import { GenreToevoegenComponent } from './toevoegen/genre/genre.component';
 import { SchilderijToevoegenComponent } from './toevoegen/schilderij/schilderij.component';
+import { GenresComponent } from './genres/genres.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, ToevoegenComponent, ArtiestToevoegenComponent, GenreToevoegenComponent, SchilderijToevoegenComponent],
+  declarations: [HomeComponent, ToevoegenComponent, ArtiestToevoegenComponent, GenreToevoegenComponent, SchilderijToevoegenComponent, GenresComponent],
   imports: [
     CommonModule,
     SharedModule

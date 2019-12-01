@@ -1,0 +1,70 @@
+.drawer-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+mat-drawer {
+    width: 15vw;
+}
+
+mat-drawer-content {
+    background-color: #fff;
+}
+
+.menu-item {
+    width: 100% !important;
+    text-align: left;
+    margin-left: 5px;
+    height: 50px;
+    font-size: 17px;
+    outline: none;
+}
+
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+    background:#89818F !important;
+  } 
+
+  h3 {
+      margin-top: 5px;
+      position: relative;
+      top: 20px;
+  }
+
+  .artiestenlijst {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    margin-right: 50px;
+  }
+
+  img {
+      margin: 25px;
+      /* width: 15%;
+      height: 30%; */
+      border-radius: 1%;
+      padding: 0;
+      border: white 4px solid;
+      height: 100%;
+      width: auto;
+      margin: auto;
+  }
+
+  p {
+      text-align: justify;
+  }
+
+  mat-icon {
+      vertical-align: middle;
+  }
+
+  a{
+      margin-top: 5px;
+  }
+
+  mat-divider {
+      width: 95%;
+  }
+
+  .tekst {
+      margin-left: 25px;
+  }

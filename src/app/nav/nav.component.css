@@ -24,6 +24,7 @@ a>img, button {
     font-weight: bold;
     margin-right: 10px;
     font-size: 15px;
+    outline: none;
 }
 
 .zoek {
@@ -43,6 +44,10 @@ a>img, button {
     color: #89818F;
 }
 
-::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-label { 
+::ng-deep .mat-form-field-appearance-outline.mat-focused { 
     color: #89818F;
+}
+
+img {
+    outline: none;
 }

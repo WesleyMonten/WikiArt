@@ -1,0 +1,31 @@
+<mat-drawer-container class="drawer-container">
+    <mat-drawer mode="side" opened>
+        <div *ngFor="let genre of genres">
+            <button mat-button class="menu-item" (click)="filter(genre.id)">
+                {{genre.naam}}
+            </button>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="container-fluid">
+            <div *ngIf="artiesten">
+                <div *ngFor="let artiest of artiesten; let i=index;">
+                    <div class="artiestenlijst">
+                        <img src="{{artiest.imageUrl}}" class="mat-elevation-z4">
+                        <div class="tekst">
+                            <h3>{{artiest.naam}}</h3>
+                            <br>
+                            <p>
+                                {{  limitTekst(artiest.biografie) }}
+                            </p>
+                            <a [routerLink]="['/detail', artiest.artiestID]" routerLinkActive="active">
+                                Lees meer <mat-icon>keyboard_arrow_right</mat-icon>
+                            </a>
+                        </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                </div>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
