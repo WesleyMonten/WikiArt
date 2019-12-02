@@ -14,7 +14,7 @@ import { ArtiestToevoegenComponent } from './dashboard/toevoegen/artiest/artiest
 import { GenreToevoegenComponent } from './dashboard/toevoegen/genre/genre.component';
 import { SchilderijService } from './schilderij/schilderij.service';
 import { SchilderijToevoegenComponent } from './dashboard/toevoegen/schilderij/schilderij.component';
-import { GenresComponent } from './dashboard/genres/genres.component';
+import { ArtiestenComponent } from './dashboard/artiesten/artiesten.component';
 
 
 @NgModule({
@@ -26,7 +26,7 @@ import { GenresComponent } from './dashboard/genres/genres.component';
     ArtiestToevoegenComponent,
     GenreToevoegenComponent,
     SchilderijToevoegenComponent,
-    GenresComponent
+    ArtiestenComponent
   ],
   imports: [
     BrowserModule,
