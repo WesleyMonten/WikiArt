@@ -22,11 +22,15 @@ export class ArtiestService {
     return this.http.get<Artiest[]>("http://localhost:8762/api/artiesten/filteropgenre/" + genreId);
   }
 
-  getArtiest(artiestID: string) {
+  getArtiest(artiestID: number) {
     return this.http.get<Artiest>("http://localhost:8762/api/artiesten/artiest/" + artiestID);
   }
 
   filterOpArtiestNaam(value: string) {
     return this.http.get<Artiest[]>("http://localhost:8762/api/artiesten/filteropnaam/" + value);
+  }
+
+  verwijderArtiest(artiestID: number) {
+    return this.http.delete<Artiest>("http://localhost:8762/api/artiesten/artiest/" + artiestID);
   }
 }

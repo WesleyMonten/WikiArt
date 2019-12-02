@@ -7,7 +7,7 @@ import { ArtiestToevoegenComponent } from '../dashboard/toevoegen/artiest/arties
 import { GenreToevoegenComponent } from '../dashboard/toevoegen/genre/genre.component';
 import { SchilderijToevoegenComponent } from '../dashboard/toevoegen/schilderij/schilderij.component';
 import { ArtiestenComponent } from '../dashboard/artiesten/artiesten.component';
-import {DetailsComponent} from '../dashboard/details/details.component';
+import { DetailsComponent } from '../dashboard/details/details.component';
 
 
 const appRoutes: Routes = [
@@ -17,7 +17,7 @@ const appRoutes: Routes = [
   { path: 'genre-toevoegen', component: GenreToevoegenComponent },
   { path: 'schilderij-toevoegen', component: SchilderijToevoegenComponent },
   { path: 'artiesten', component: ArtiestenComponent },
-  { path: 'details', component: DetailsComponent},
+  { path: 'details/:id', component: DetailsComponent },
   { path: '**', redirectTo: '' }
 ];
 
