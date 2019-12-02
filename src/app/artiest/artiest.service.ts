@@ -22,6 +22,10 @@ export class ArtiestService {
     return this.http.get<Artiest[]>("http://localhost:8762/api/artiesten/filteropgenre/" + genreId);
   }
 
+  getArtiest(artiestID: string) {
+    return this.http.get<Artiest>("http://localhost:8762/api/artiesten/artiest/" + artiestID);
+  }
+
   filterOpArtiestNaam(value: string) {
     return this.http.get<Artiest[]>("http://localhost:8762/api/artiesten/filteropnaam/" + value);
   }
