@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ArtiestService} from '../../artiest/artiest.service';
+import {Artiest} from '../../artiest/models/artiest.model';
 
 @Component({
   selector: 'app-details',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor() { }
+  private artiest: any;
+
+  constructor(private _artiestService: ArtiestService) { }
 
   ngOnInit() {
   }
 
+  getArtiest(artiestID: string) {
+    this._artiestService.getArtiest(artiestID).subscribe(res => {
+      this.artiest = res;
+    });
+  }
 }
