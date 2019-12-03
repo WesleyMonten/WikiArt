@@ -15,8 +15,10 @@ import { GenreToevoegenComponent } from './dashboard/toevoegen/genre/genre.compo
 import { SchilderijService } from './schilderij/schilderij.service';
 import { SchilderijToevoegenComponent } from './dashboard/toevoegen/schilderij/schilderij.component';
 import { ArtiestenComponent } from './dashboard/artiesten/artiesten.component';
-import {DetailsComponent} from './dashboard/details/details.component';
-
+import { DetailsComponent } from './dashboard/details/details.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorage } from 'angularfire2/storage';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -34,12 +36,14 @@ import {DetailsComponent} from './dashboard/details/details.component';
     BrowserModule,
     BrowserAnimationsModule,
     RoutingModule,
-    SharedModule
+    SharedModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [
     ArtiestService,
     GenreService,
-    SchilderijService
+    SchilderijService,
+    AngularFireStorage
   ],
   bootstrap: [AppComponent]
 })

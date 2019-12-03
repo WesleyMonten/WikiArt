@@ -33,4 +33,10 @@ export class ArtiestService {
   verwijderArtiest(artiestID: number) {
     return this.http.delete<Artiest>("http://localhost:8762/api/artiesten/artiest/" + artiestID);
   }
+
+  editArtiest(artiest: Artiest, artiestID: number) {
+    return this.http.put<Artiest>("http://localhost:8762/api/artiesten/artiest/" + artiestID, JSON.stringify(artiest), {
+      headers: new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8')
+    });
+  }
 }

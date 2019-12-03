@@ -40,3 +40,21 @@ img {
   color: #fff;
   top: 45% !important;
 }
+
+mat-form-field {
+  width: 100%;
+  margin-top: 15px;
+}
+
+label > input {
+  display: none;
+}
+
+.img {
+  cursor: pointer;
+}
+
+.submit {
+  background-color: #89818F;
+  color: #fff;
+}

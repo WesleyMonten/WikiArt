@@ -24,4 +24,10 @@ export class GenreService {
     });
   }
 
+  editArtiestGenre(genreId: string, artiestID: number) {
+    return this.http.put<Genre>("http://localhost:8762/api/genres/replace/" + genreId, JSON.stringify(artiestID), {
+      headers: new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8')
+    });
+  }
+
 }

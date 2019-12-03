@@ -24,4 +24,11 @@ h2 {
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
+  label > input {
+    display: none;
+  }
+
+  img {
+    cursor: pointer;
+  }

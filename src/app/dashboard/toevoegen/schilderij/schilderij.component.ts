@@ -3,6 +3,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ArtiestService } from 'src/app/artiest/artiest.service';
 import { Artiest } from 'src/app/artiest/models/artiest.model';
 import { SchilderijService } from 'src/app/schilderij/schilderij.service';
+import { AngularFireStorage, AngularFireUploadTask, AngularFireStorageReference } from 'angularfire2/storage';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-toevoegen-schilderij',
@@ -11,22 +13,36 @@ import { SchilderijService } from 'src/app/schilderij/schilderij.service';
 })
 export class SchilderijToevoegenComponent implements OnInit {
 
+  ref: AngularFireStorageReference;
+  task: AngularFireUploadTask;
+  url: string;
+
   artiesten: Artiest[];
   imageUrl: string = "../../../assets/schilderij.png";
 
   schilderijForm = this.fb.group({
     naam: ['', Validators.required],
     artiestID: [''],
-    imageUrl: ['', Validators.required]
+    imageUrl: ['']
   });
 
-  constructor(private fb: FormBuilder, private _artiestService: ArtiestService, private _schilderijService: SchilderijService) { }
+  constructor(private fb: FormBuilder, private _artiestService: ArtiestService, private _schilderijService: SchilderijService, private afStorage: AngularFireStorage) { }
 
-  onChangeImage(url) {
-    this.imageUrl = url;
+  upload(event) {
+    const id = Math.random().toString(36).substring(2);
+    this.ref = this.afStorage.ref(id);
+    this.task = this.ref.put(event.target.files[0]);
+    this.task.snapshotChanges().pipe(
+      finalize(() => {
+        this.ref.getDownloadURL().subscribe(url => {
+          this.imageUrl = url;
+        });
+      })
+    ).subscribe();
   }
 
   onSubmitSchilderij() {
+    this.schilderijForm.get('imageUrl').setValue(this.imageUrl);
     this._schilderijService.addSchilderij(this.schilderijForm.value).subscribe(res => {
       console.log(res);
     },
@@ -39,6 +55,7 @@ export class SchilderijToevoegenComponent implements OnInit {
     this._artiestService.getArtiesten().subscribe(res => {
       this.artiesten = res;
     })
+
   }
 
 }
