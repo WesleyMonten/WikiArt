@@ -41,6 +41,11 @@
         </div>
       </div>
     </div>
+    <div *ngFor="let schilderij of schilderijen;">
+      <div class="col-4">
+        <img src="{{schilderij.imageUrl}}" height="400px" width="auto"/>
+      </div>
+    </div>
   </div>
 </div>
 

@@ -6,6 +6,8 @@ import { Validators, FormBuilder, Form, FormGroup, FormArray } from '@angular/fo
 import { Genre } from 'src/app/genre/models/genre.model';
 import { GenreService } from 'src/app/genre/genre.service';
 import { BehaviorSubject } from 'rxjs';
+import {Schilderij} from '../../schilderij/models/schilderij.model';
+import {SchilderijService} from '../../schilderij/schilderij.service';
 
 @Component({
   selector: 'app-details',
@@ -21,6 +23,7 @@ export class DetailsComponent implements OnInit {
   aanpassen: boolean = false;
   artiestForm: FormGroup;
   imageUrl: string;
+  schilderijen: Schilderij[];
   genres: Genre[];
   genresArtiest: Genre[];
   Genres: FormArray;
@@ -31,10 +34,16 @@ export class DetailsComponent implements OnInit {
   });
 
 
-  constructor(private _artiestService: ArtiestService, private route: ActivatedRoute, private fb: FormBuilder, private _genreService: GenreService) {
+  constructor(private _artiestService: ArtiestService, private route: ActivatedRoute, private fb: FormBuilder, private _genreService: GenreService, private _schilderijService: SchilderijService) {
     this.refresh.subscribe(() => {
       this.ngOnInit();
-    })
+    });
+  }
+
+  getSchilderijen(artiestID: number){
+    this._schilderijService.getSchilderijByArtiest(artiestID).subscribe(res => {
+      this.schilderijen = res;
+    });
   }
 
   getArtiest(artiestID: number) {
@@ -56,7 +65,7 @@ export class DetailsComponent implements OnInit {
 
   verwijderArtiest(artiestID: number) {
     this._artiestService.verwijderArtiest(artiestID).subscribe(() => {
-      this.verwijderd = true
+      this.verwijderd = true;
     });
   }
 
@@ -104,6 +113,6 @@ export class DetailsComponent implements OnInit {
 
     this._genreService.getGenres().subscribe(res => {
       this.genres = res;
-    })
+    });
   }
 }
