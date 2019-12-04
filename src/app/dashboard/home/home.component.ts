@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Artiest} from '../../artiest/models/artiest.model';
+import {ArtiestService} from '../../artiest/artiest.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  artiesten: Artiest[] = [];
+
+  constructor(private _artiestService: ArtiestService) { }
 
   ngOnInit() {
+    this._artiestService.getArtiesten().subscribe(res => {
+      this.artiesten = res;
+      this.artiesten.sort(() => Math.random() - 0.5);
+    });
   }
 
 }
