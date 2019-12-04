@@ -13,8 +13,9 @@ span h2 {
     text-align: center;
 }
 
-
-
+.artiesten {
+    margin: auto;
+}
 
 @media only screen and (min-width: 1140px) {
     .intro {
@@ -28,6 +29,8 @@ span h2 {
         position: relative;
         top: 80px;
         right: 80px;
+        height: 100px;
+        width: auto;
     }
 
     div h3 {
@@ -37,8 +40,8 @@ span h2 {
     }
 
     .artiest{
-        width: 20vw;
-        height: 100%;
+        width: auto;
+        height: 350px;
         margin: 15px;
         padding: 0;
         border-radius: 5% 5%;
@@ -79,8 +82,8 @@ span h2 {
 @media only screen and (max-width: 1140px) {
 
     .artiest{
-        width: 40vw;
-        height: 100%;
+        width: auto;
+        height: 350px;
         padding: 0;
         border-radius: 5% 5%;
         overflow: hidden;
@@ -133,8 +136,8 @@ span h2 {
 @media only screen and (max-width: 750px) {
 
     .artiest{
-        width: 70vw;
-        height: 100%;
+        width: auto;
+        height: 350px;
         padding: 0;
         border-radius: 5% 5%;
         overflow: hidden;

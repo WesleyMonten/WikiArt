@@ -24,10 +24,18 @@ export class GenreService {
     });
   }
 
-  editArtiestGenre(genreId: string, artiestID: number) {
-    return this.http.put<Genre>("http://localhost:8762/api/genres/replace/" + genreId, JSON.stringify(artiestID), {
+  verwijderArtiestBijGenres(artiestID: number) {
+    return this.http.put<Genre>("http://localhost:8762/api/genres/verwijder/" + artiestID, {
       headers: new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8')
     });
   }
+
+  getGenresVanArtiest(artiestID: number) {
+    return this.http.get<Genre[]>("http://localhost:8762/api/genres/genresartiest/" + artiestID, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8')
+    });
+  }
+
+
 
 }

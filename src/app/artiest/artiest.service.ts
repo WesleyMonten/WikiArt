@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Artiest } from './models/artiest.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class ArtiestService {
+
+  refresh = new BehaviorSubject(false);
 
   constructor(private http: HttpClient) { }
 

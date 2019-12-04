@@ -1,0 +1,64 @@
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  p {
+    text-align: justify;
+  }
+  
+  img {
+    border-radius: 1%;
+    padding: 0;
+    margin: 0;
+    border: white 4px solid;
+  }
+  
+  .verwijder{
+    background-color: #FB5A75;
+    color: white;
+    font-weight: bold;
+    float: right;
+  }
+  
+  .aanpassen {
+    background-color: #FFA821;
+    color: #fff;
+    font-weight: bold;
+    float: right;
+    margin-right: 5px;
+  }
+  
+  .melding {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .terug {
+    background-color: #89818F;
+    color: #fff;
+    top: 45% !important;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  label > input {
+    display: none;
+  }
+  
+  .img {
+    cursor: pointer;
+  }
+  
+  .submit {
+    background-color: #89818F;
+    color: #fff;
+  }
+
+  ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+    background:#89818F !important;
+  } 

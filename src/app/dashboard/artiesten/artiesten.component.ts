@@ -20,9 +20,7 @@ export class ArtiestenComponent implements OnInit {
     Gebruikersnaam: ['']
   });
 
-  constructor(private _genreService: GenreService, private _artiestService: ArtiestService, private fb: FormBuilder) {
-
-  }
+  constructor(private _genreService: GenreService, private _artiestService: ArtiestService, private fb: FormBuilder) { }
 
   filterOpGenre(genreId: string) {
     this._artiestService.filterOpGenre(genreId).subscribe(res => {

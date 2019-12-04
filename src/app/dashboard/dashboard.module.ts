@@ -8,12 +8,13 @@ import { GenreToevoegenComponent } from './toevoegen/genre/genre.component';
 import { SchilderijToevoegenComponent } from './toevoegen/schilderij/schilderij.component';
 import { ArtiestenComponent } from './artiesten/artiesten.component';
 import { DetailsComponent } from './details/details.component';
+import { AanpassenComponent } from './aanpassen/aanpassen.component';
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, ToevoegenComponent, ArtiestToevoegenComponent, GenreToevoegenComponent, SchilderijToevoegenComponent, ArtiestenComponent, DetailsComponent],
+  declarations: [HomeComponent, ToevoegenComponent, ArtiestToevoegenComponent, GenreToevoegenComponent, SchilderijToevoegenComponent, ArtiestenComponent, DetailsComponent, AanpassenComponent],
   imports: [
     CommonModule,
     SharedModule

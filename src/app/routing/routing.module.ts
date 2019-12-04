@@ -8,6 +8,7 @@ import { GenreToevoegenComponent } from '../dashboard/toevoegen/genre/genre.comp
 import { SchilderijToevoegenComponent } from '../dashboard/toevoegen/schilderij/schilderij.component';
 import { ArtiestenComponent } from '../dashboard/artiesten/artiesten.component';
 import { DetailsComponent } from '../dashboard/details/details.component';
+import { AanpassenComponent } from '../dashboard/aanpassen/aanpassen.component';
 
 
 const appRoutes: Routes = [
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
   { path: 'schilderij-toevoegen', component: SchilderijToevoegenComponent },
   { path: 'artiesten', component: ArtiestenComponent },
   { path: 'details/:id', component: DetailsComponent },
+  { path: 'aanpassen/:id', component: AanpassenComponent },
   { path: '**', redirectTo: '' }
 ];
 

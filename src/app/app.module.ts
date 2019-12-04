@@ -19,6 +19,7 @@ import { DetailsComponent } from './dashboard/details/details.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { environment } from 'src/environments/environment';
+import { AanpassenComponent } from './dashboard/aanpassen/aanpassen.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { environment } from 'src/environments/environment';
     GenreToevoegenComponent,
     SchilderijToevoegenComponent,
     ArtiestenComponent,
-    DetailsComponent
+    DetailsComponent,
+    AanpassenComponent
   ],
   imports: [
     BrowserModule,

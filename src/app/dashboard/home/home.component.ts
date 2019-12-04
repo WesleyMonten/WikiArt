@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Artiest} from '../../artiest/models/artiest.model';
-import {ArtiestService} from '../../artiest/artiest.service';
+import { Artiest } from '../../artiest/models/artiest.model';
+import { ArtiestService } from '../../artiest/artiest.service';
 
 @Component({
   selector: 'app-home',
