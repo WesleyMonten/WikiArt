@@ -11,7 +11,7 @@ https://github.com/BertVerachtert/schilderij
 
 ## Gebruik
 
-Clone deze applicatie en gebruik 'ng serve' samen met de andere service repo's die hierboven staan.
+Clone deze applicatie en gebruik 'npm install' en vervolgens 'ng serve' samen met de andere service repo's die hierboven staan.
 
 ## Feedback
 
