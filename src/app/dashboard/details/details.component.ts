@@ -32,11 +32,11 @@ export class DetailsComponent implements OnInit {
     });
   }
 
-  // getSchilderijen(artiestID: number) {
-  //   this._schilderijService.getSchilderijByArtiest(artiestID).subscribe(res => {
-  //     this.schilderijen = res;
-  //   });
-  // }
+  getSchilderijen(artiestID: number) {
+    this._schilderijService.getSchilderijByArtiest(artiestID).subscribe(res => {
+      this.schilderijen = res;
+    });
+  }
 
   getArtiest(artiestID: number) {
     this._artiestService.getArtiest(artiestID).subscribe(res => {

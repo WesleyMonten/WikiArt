@@ -29,7 +29,7 @@ export class ArtiestToevoegenComponent implements OnInit {
     nationaliteit: ['', Validators.required],
     jaren: ['', Validators.required],
     aantalSchilderijen: [''],
-    imageUrl: ['', Validators.required],
+    imageUrl: [''],
   });
 
   genreForm = this.fb.group({

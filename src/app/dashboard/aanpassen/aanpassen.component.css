@@ -11,34 +11,24 @@ h2 {
     padding: 0;
     margin: 0;
     border: white 4px solid;
+    max-width: 100%;
+    height: 100%;
   }
   
-  .verwijder{
-    background-color: #FB5A75;
-    color: white;
-    font-weight: bold;
-    float: right;
-  }
-  
-  .aanpassen {
-    background-color: #FFA821;
+  .terug {
+    background-color: #89818F;
     color: #fff;
     font-weight: bold;
-    float: right;
     margin-right: 5px;
-  }
+    position: relative;
+    top: -30px;
+    }
   
   .melding {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translateX(-50%);
-  }
-  
-  .terug {
-    background-color: #89818F;
-    color: #fff;
-    top: 45% !important;
   }
   
   mat-form-field {

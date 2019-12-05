@@ -5,6 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GenreService } from 'src/app/genre/genre.service';
 import { Genre } from 'src/app/genre/models/genre.model';
 import { Artiest } from 'src/app/artiest/models/artiest.model';
+import { AngularFireStorage, AngularFireUploadTask, AngularFireStorageReference } from 'angularfire2/storage';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-aanpassen',
@@ -22,8 +24,11 @@ export class AanpassenComponent implements OnInit {
   genres: Genre[];
   genresArtiest: Genre[];
   Genres: FormArray;
+  ref: AngularFireStorageReference;
+  task: AngularFireUploadTask;
+  url: string;
 
-  constructor(private _artiestService: ArtiestService, private route: ActivatedRoute, private fb: FormBuilder, private _genreService: GenreService, private router: Router) { }
+  constructor(private _artiestService: ArtiestService, private route: ActivatedRoute, private fb: FormBuilder, private _genreService: GenreService, private router: Router, private afStorage: AngularFireStorage) { }
 
   getArtiest(artiestID: number) {
     this._artiestService.getArtiest(artiestID).subscribe(res => {
@@ -40,6 +45,19 @@ export class AanpassenComponent implements OnInit {
 
       this.imageUrl = res.imageUrl;
     });
+  }
+
+  upload(event) {
+    const id = Math.random().toString(36).substring(2);
+    this.ref = this.afStorage.ref(id);
+    this.task = this.ref.put(event.target.files[0]);
+    this.task.snapshotChanges().pipe(
+      finalize(() => {
+        this.ref.getDownloadURL().subscribe(url => {
+          this.imageUrl = url;
+        });
+      })
+    ).subscribe();
   }
 
   initArray(index: number): FormGroup {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Schilderij } from './models/schilderij.model';
-import {Artiest} from '../artiest/models/artiest.model';
+import { Artiest } from '../artiest/models/artiest.model';
 
 @Injectable()
 export class SchilderijService {
@@ -14,7 +14,7 @@ export class SchilderijService {
     });
   }
 
-  getSchilderijByArtiest(artiestId: number){
-    return this.http.get<Schilderij[]>('http://localhost:8762/api/schilderijen/schilderij/' + artiestId);
+  getSchilderijByArtiest(artiestID: number) {
+    return this.http.get<Schilderij[]>('http://localhost:8762/api/schilderijen/schilderij/' + artiestID);
   }
 }

@@ -38,15 +38,11 @@ mat-drawer-content {
   }
 
   img {
-      margin: 25px;
-      /* width: 15%;
-      height: 30%; */
       border-radius: 1%;
       padding: 0;
       border: white 4px solid;
       height: 100%;
-      width: auto;
-      margin: auto;
+      max-width: 100%;
   }
 
   p {
