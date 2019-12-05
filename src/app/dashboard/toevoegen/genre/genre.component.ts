@@ -4,6 +4,7 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { SelectionModel } from '@angular/cdk/collections';
 import { ArtiestService } from 'src/app/artiest/artiest.service';
 import { GenreService } from 'src/app/genre/genre.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-toevoegen-genre',
@@ -25,7 +26,7 @@ export class GenreToevoegenComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
-  constructor(private fb: FormBuilder, private _artiestService: ArtiestService, private _genreService: GenreService) { }
+  constructor(private fb: FormBuilder, private _artiestService: ArtiestService, private _genreService: GenreService, private router: Router) { }
 
   isAllSelected() {
     const numSelected = this.selection.selected.length;
@@ -53,9 +54,10 @@ export class GenreToevoegenComponent implements OnInit {
     });
     this.genreForm.get('artiestIds').setValue(this.artiestIds);
     this._genreService.addGenre(this.genreForm.value).subscribe(res => {
-      console.warn(res);
+      this.router.navigate(['/toevoegen']);
       this.genreForm.reset();
       this.selection = new SelectionModel<any>(true, []);
+
     },
       (error: any) => {
         console.error(error);
@@ -66,7 +68,7 @@ export class GenreToevoegenComponent implements OnInit {
     this._artiestService.getArtiesten().subscribe(res => {
       this.dataSource = new MatTableDataSource(res);
       this.resultsLength = res.length;
-      this.dataSource.paginator = this.paginator;
+      setTimeout(() => this.dataSource.paginator = this.paginator);
     })
   }
 

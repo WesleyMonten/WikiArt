@@ -5,6 +5,7 @@ import { ArtiestService } from 'src/app/artiest/artiest.service';
 import { GenreService } from 'src/app/genre/genre.service';
 import { AngularFireStorageReference, AngularFireUploadTask, AngularFireStorage } from 'angularfire2/storage';
 import { finalize } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-toevoegen-artiest',
@@ -36,7 +37,7 @@ export class ArtiestToevoegenComponent implements OnInit {
     Genres: this.fb.array([this.initArray(), this.initArray(), this.initArray()])
   });
 
-  constructor(public fb: FormBuilder, private _artiestService: ArtiestService, private _genreService: GenreService, private afStorage: AngularFireStorage) { }
+  constructor(public fb: FormBuilder, private _artiestService: ArtiestService, private _genreService: GenreService, private afStorage: AngularFireStorage, private router: Router) { }
 
   upload(event) {
     const id = Math.random().toString(36).substring(2);
@@ -72,6 +73,7 @@ export class ArtiestToevoegenComponent implements OnInit {
             });
         }
       });
+      this.router.navigate(['/toevoegen'])
     },
       (error: any) => {
         console.error(error);

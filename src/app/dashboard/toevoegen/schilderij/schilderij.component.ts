@@ -5,6 +5,7 @@ import { Artiest } from 'src/app/artiest/models/artiest.model';
 import { SchilderijService } from 'src/app/schilderij/schilderij.service';
 import { AngularFireStorage, AngularFireUploadTask, AngularFireStorageReference } from 'angularfire2/storage';
 import { finalize } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-toevoegen-schilderij',
@@ -26,7 +27,7 @@ export class SchilderijToevoegenComponent implements OnInit {
     imageUrl: ['']
   });
 
-  constructor(private fb: FormBuilder, private _artiestService: ArtiestService, private _schilderijService: SchilderijService, private afStorage: AngularFireStorage) { }
+  constructor(private fb: FormBuilder, private _artiestService: ArtiestService, private _schilderijService: SchilderijService, private afStorage: AngularFireStorage, private router: Router) { }
 
   upload(event) {
     const id = Math.random().toString(36).substring(2);
@@ -45,6 +46,8 @@ export class SchilderijToevoegenComponent implements OnInit {
     this.schilderijForm.get('imageUrl').setValue(this.imageUrl);
     this._schilderijService.addSchilderij(this.schilderijForm.value).subscribe(res => {
       console.log(res);
+      this.router.navigate(['/toevoegen']);
+      this.schilderijForm.reset();
     },
       (error: any) => {
         console.error(error);
