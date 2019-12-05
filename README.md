@@ -1,27 +1,28 @@
-# WikiArt
+# Edge Service
+Deze service maakt deel uit van een groter project: wikiart.  
+De Edge Service is een Spring Boot service die tussen de front-end angular applicatie en de eureka server zit. Men kan artiesten, genres en schilderijen beheren via deze applicatie.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.17.
+Andere repo's voor deze applicatie:  
+https://github.com/WesleyMonten/Genre-Service  
+https://github.com/WesleyMonten/Eureka-Service  
+https://github.com/BertVerachtert/ZuulGateway  
+https://github.com/WesleyMonten/Edge-Service  
+https://github.com/BertVerachtert/schilderij
+https://github.com/WesleyMonten/WikiArt
 
-## Development server
+## Gebruik
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Clone deze applicatie en gebruik 'ng serve' samen met de andere service repo's die hierboven staan.
 
-## Code scaffolding
+## Feedback
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Bij vragen of opmerkingen kunt u naar de volgende personen sturen:
 
-## Build
+Jeroen Jansen r0695294@student.thomasmore.be  
+Wesley Monten r0696005@student.thomasmore.be  
+Bert Verachtert r0710075@student.thomasmore.be  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Door:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Dit project maakt deel van de curus Java Advanced topics van Thomas More Geel (https://thomasmore.be/) in samenwerking met Real Dolmen(https://www.realdolmen.com/nl).
