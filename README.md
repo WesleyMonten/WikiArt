@@ -1,6 +1,6 @@
-# Edge Service
-Deze service maakt deel uit van een groter project: wikiart.  
-De Edge Service is een Spring Boot service die tussen de front-end angular applicatie en de eureka server zit. Men kan artiesten, genres en schilderijen beheren via deze applicatie.
+# Wiki Art Front end
+Deze applicatie maakt deel uit van een groter project: wikiart.  
+Dit angular project is een web applicatie waarmee men artiesten, de genres waar deze artiesten toe behoren en de schilderijen van de artiesten kan beheren. Deze applicatie maakt gebruik van een springboot backend die u in de andere repo's kan vinden.
 
 Andere repo's voor deze applicatie:  
 https://github.com/WesleyMonten/Genre-Service  
@@ -8,7 +8,6 @@ https://github.com/WesleyMonten/Eureka-Service
 https://github.com/BertVerachtert/ZuulGateway  
 https://github.com/WesleyMonten/Edge-Service  
 https://github.com/BertVerachtert/schilderij
-https://github.com/WesleyMonten/WikiArt
 
 ## Gebruik
 
