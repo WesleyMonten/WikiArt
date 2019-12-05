@@ -15,6 +15,11 @@ export class SchilderijService {
   }
 
   getSchilderijByArtiest(artiestID: number) {
-    return this.http.get<Schilderij[]>('http://localhost:8762/api/schilderijen/schilderij/' + artiestID);
+    return this.http.get<Schilderij[]>('http://localhost:8762/api/schilderijen/schilderijen/' + artiestID);
   }
+
+  verwijderSchilderij(schilderijID: number) {
+    return this.http.delete<Artiest>("http://localhost:8762/api/schilderijen/schilderij/" + schilderijID);
+  }
+
 }

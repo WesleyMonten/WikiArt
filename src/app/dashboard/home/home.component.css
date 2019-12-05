@@ -13,156 +13,59 @@ span h2 {
     text-align: center;
 }
 
+.intro {
+    margin-top: 50px;
+}
+
 .artiesten {
-    margin: auto;
-}
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto !important;
+    height: 200px;
+  }
+  
+  .artiest {
+    width: 350px;
+    margin: 40px;
+    display: inline-block;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 250px;
+  }
+  
+  .artiesten h4 {
+    text-align: center;
+  }
 
-@media only screen and (min-width: 1140px) {
-    .intro {
-        position: relative;
-        top: 50px;
-        margin-top: 50px;
-        
-    }
-    
-    .intro img {
-        position: relative;
-        top: 80px;
-        right: 80px;
-        height: 100px;
-        width: auto;
-    }
+  img {
+      max-width: 100%;
+      height: 100%;
+      vertical-align: middle;
+  }
+  
+  .voorgesteld {
+      margin-top: 100px;
+  }
 
-    div h3 {
-        margin-left: 20px;
-        margin-top: 50px;
-        margin-bottom: 15px;
-    }
+  h4 {
+      color: #000;
+      text-decoration: none;
+  }
 
-    .artiest{
-        width: auto;
-        height: 350px;
-        margin: 15px;
-        padding: 0;
-        border-radius: 5% 5%;
-        overflow: hidden;
-    }
+  a:hover {
+      text-decoration: none;
+  }
 
-    .voorgesteld {
-        position: relative;
-        top: 120px;
-        left: 20px;
-    }
+.container-fluid { 
+      margin-top: 100px;
+      /* height: 100% !important;
+      width: 100%;
+      overflow: hidden; */
+  } 
 
-    .imgtext {
-        position: absolute;
-        top: 40%;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-58%);
-        right: 0;
-        color: #fff;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity .2s, visibility .2s;
-    }
-    
-    .img:hover img {
-        transition: all 300ms ease-in-out;
-        filter: blur(2px);
-        transform: scale(1.03);
-    }
-      
-    .img:hover .imgtext {
-        visibility: visible;
-        opacity: 1;
-    }
-}
-
-@media only screen and (max-width: 1140px) {
-
-    .artiest{
-        width: auto;
-        height: 350px;
-        padding: 0;
-        border-radius: 5% 5%;
-        overflow: hidden;
-    }
-
-    .img {
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
-    
-    .intro img {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-
-    .voorgesteld {
-        position: relative;
-        top: 40px;
-        left: 20px;
-    }
-
-    .imgtext {
-        position: absolute;
-        top: 40%;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-58%);
-        right: 0;
-        color: #fff;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity .2s, visibility .2s;
-    }
-    
-    .img:hover img {
-        transition: all 300ms ease-in-out;
-        filter: blur(2px);
-        transform: scale(1.03);
-    }
-      
-    .img:hover .imgtext {
-        visibility: visible;
-        opacity: 1;
-    }
-}
-
-@media only screen and (max-width: 750px) {
-
-    .artiest{
-        width: auto;
-        height: 350px;
-        padding: 0;
-        border-radius: 5% 5%;
-        overflow: hidden;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .img:hover img {
-        transition: none;
-        filter: none;
-        transform: none;
-    }
-
-    .imgtext {
-        position: static;
-        color: #000;
-        opacity: 1;
-        visibility: visible;
-        transition: none;
-    }
-
-    .img {
-        margin-bottom: 50px;
-    }
-}
-
-
+  h3 {
+      margin: auto;
+  }

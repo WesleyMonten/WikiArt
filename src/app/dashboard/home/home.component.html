@@ -1,12 +1,9 @@
 <div class="container-fluid">
-        <div class="row intro">
-                <div class="col-xl-1">
-
+        <div class="row my-5 align-items-center home">
+                <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
+                        <img src="../assets/wikiart_logo_zwart.png" class="img-fluid align-items-center" />
                 </div>
-                <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12">
-                        <img src="../assets/wikiart_logo_zwart.png" class="img-fluid" />
-                </div>
-                <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12">
+                <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
                         <h2>Welkom op WikiArt!</h2>
                         <br>
                         <p>
@@ -21,27 +18,22 @@
                                 dan niet om deze toe te voegen. Deze site is van kunstliefhebbers voor kunstliefhebbers.
                         </p>
                 </div>
-                <div class="col-xl-1 ">
-
-                </div>
         </div>
-        <div class="voorgesteld">
+        <div class="row mx-5 voorgesteld align-items-center">
                 <h3>
                         Voorgestelde artiesten
                 </h3>
-                <div class="row">
-                        <div *ngFor="let artiest of artiesten; let i=index;" class="artiesten">
-                                <div *ngIf="i<4">
-                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 img">
-                                                <a [routerLink]="['/details/', artiest.artiestID]"
-                                                        routerLinkActive="active">
-                                                        <img class="artiest" src="{{artiest.imageUrl}}">
-                                                        <span class="imgtext">
-                                                                <h2>{{artiest.naam}}</h2>
-                                                        </span>
-                                                </a>
-                                        </div>
+                <div>
+                        <div class="artiesten">
+                                <div *ngFor="let artiest of artiesten;let i=index" class="artiest">
+                                        <a [routerLink]="['/details/', artiest.artiestID]" routerLinkActive="active"
+                                                *ngIf="i<4">
+                                                <img src="{{artiest.imageUrl}}" class="img-fluid mat-elevation-z4" />
+                                                <h4> {{artiest.naam}}
+                                                </h4>
+                                        </a>
                                 </div>
+
                         </div>
                 </div>
         </div>

@@ -18,6 +18,7 @@
           <img [src]='artiest.imageUrl' class="mat-elevation-z4 img-fluid">
         </div>
         <div class="col">
+          <br>
           <div class="row">
             <div class="col-12" *ngIf="genresArtiest">
               <p>Genre: <span *ngFor="let genre of genresArtiest">{{genre.naam + " "}}</span></p>
@@ -47,10 +48,21 @@
           <p>{{artiest.biografie}}</p>
         </div>
       </div>
-    </div>
-    <div *ngFor="let schilderij of schilderijen;">
-      <div class="col-4">
-        <img src="{{schilderij.imageUrl}}" class=".img-fluid" />
+      <div class="row">
+        <h2 *ngIf="schilderijen.length > 0">Gallerij</h2>
+      </div>
+      <div class="row">
+        <br>
+        <div class="schilderijen">
+          <div *ngFor="let schilderij of schilderijen;" class="schilderij">
+            <img src="{{schilderij.imageUrl}}" class="img-fluid mat-elevation-z4" />
+            <button mat-mini-fab type="button" class="verwijderSchilderij"
+              (click)="verwijderSchilderij(schilderij.schilderijID)">
+              <mat-icon>clear</mat-icon>
+            </button>
+            <h4>{{schilderij.naam}}</h4>
+          </div>
+        </div>
       </div>
     </div>
   </div>

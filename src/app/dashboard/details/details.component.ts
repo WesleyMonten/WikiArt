@@ -52,10 +52,18 @@ export class DetailsComponent implements OnInit {
     });
   }
 
+  verwijderSchilderij(schilderijID: number) {
+    this._schilderijService.verwijderSchilderij(schilderijID).subscribe(() => {
+      console.log(true);
+      this.getSchilderijen(this.artiest.artiestID);
+    })
+  }
+
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id'];
       this.getArtiest(this.id);
+      this.getSchilderijen(this.id);
     });
 
     this._genreService.getGenresVanArtiest(this.id).subscribe(res => {
